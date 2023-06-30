@@ -4,20 +4,28 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>CADASTRO DE USUÁRIO E LOGIN</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
-<fieldset style="width: 50%;">
+<fieldset style="width: 80%;">
 	<form>
 		<label for="f-name">Nome</label>
-		<input id="f-name"type="text" name="name">
+		<input class="input"id="f-name"type="text" name="name" oninput="nameValidate()">
+		<span class="spans">Corriga o seu nome</span>
 		<label for="f-email">E-mail</label>
-		<input id="f-email"type="text" name="e-mail">
+		<input class="input" id="f-email"type="e-mail" name="e-mail">
+		<span class="spans">Verifique o seu-email</span>
+		<label for="f-endereco">Endereço</label>
+		<input id="f-endereco" type="text" name="endereco">		
+		<label for="f-cep">CEP</label>
+		<input id="f-cep" pattern="[0-9]{5}-[0-9]{3} " name="CEP">
 		<label for="f-password">Senha</label>
-		<input id="f-password"type="password" name="password">
+		<input class="input" id="f-password"type="password" name="password">
+		<span class="spans">Corriga a sua senha</span>
 
 	</form>
 </fieldset>
-
+<script type="text/javascript" src="script.js"></script>
 </body>
 </html>
