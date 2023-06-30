@@ -8,8 +8,8 @@
 </head>
 <body>
 
-<fieldset style="width: 80%;">
-	<form>
+
+	
 		<label for="f-name">Nome</label>
 		<input class="input"id="f-name"type="text" name="name" oninput="nameValidate()">
 		<span class="spans">Corriga o seu nome</span>
@@ -19,13 +19,17 @@
 		<label for="f-endereco">Endereço</label>
 		<input id="f-endereco" type="text" name="endereco">		
 		<label for="f-cep">CEP</label>
-		<input id="f-cep" pattern="[0-9]{5}-[0-9]{3} " name="CEP">
+		<input id="f-cep" type="number" name="CEP" >
+		<button onclick="consultaEndereco()">Consultar</button>
 		<label for="f-password">Senha</label>
 		<input class="input" id="f-password"type="password" name="password">
 		<span class="spans">Corriga a sua senha</span>
 
-	</form>
-</fieldset>
+	
+	<div id="resultado">
+		<p>Resultado:</p>
+	</div>
+
 <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
