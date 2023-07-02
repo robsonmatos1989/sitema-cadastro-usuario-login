@@ -33,21 +33,39 @@ function consultaEndereco(){
 	
 	
 		let url = `https://viacep.com.br/ws/${cep}/json/`;
+		// O addEventListener serve para adicionar ouvinte de evento ao evento do envio do formulário
+		// event.preventDefault() impede o padrão de envio do formulário, podendo manipular os dados
+		//retornados pela api
+		document.getElementById('myForm').addEventListener('submit', function(event) {
+    	event.preventDefault();
 
 		fetch(url).then(function(response){
 			response.json().then(function(data){
 				console.log(data);
-				mostrarEndereco(data);
+				/*mostrarEndereco(data);*/
+				const rua = data.logradouro;
+				const bairro = data.bairro;
+				const cidade = data.localidade;
+				const uf = data.uf;
+				document.getElementById('f-endereco').value = rua;
+				document.getElementById('f-bairro').value = bairro;
+				document.getElementById('f-cidade').value = cidade;
+				document.getElementById('f-uf').value = uf;
 
 			})
 		});
+		});
 	}
 
-function mostrarEndereco(dados){
-	let resultado = document.querySelector('#resultado');
 
-	resultado.innerHTML = `<p>Endereço: ${dados.logradouro}</p>	
-							<p>Complemento: ${dados.complemento}</p> 
-							<p>Bairro: ${dados.bairro}</p> 
-							<p>Cidade: ${dados.localidade} - ${dados.uf}</p>`
-}
+
+
+
+
+
+
+
+
+
+
+
