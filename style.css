@@ -1,5 +1,6 @@
 
 
+
 span{
 	font-size: 14px;
 	font-weight: bold;
@@ -10,6 +11,7 @@ span{
 
 .input{
 	margin-top: 10px;
+	border-radius: 10px;
 }
 
 /*.container{
@@ -28,9 +30,16 @@ fieldset {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* Estilos adicionais para o fieldset */
   background-color: #cdaf7b;
+  border-radius: 20px;
 }
 body{
 	background-image: url(images/background-image.jpg);
+	font-family:"Trirong", serif;
+	font-weight: bold;
+}
+
+button{
+	font-family:"Trirong", serif;
+	font-weight: bold;
 }
