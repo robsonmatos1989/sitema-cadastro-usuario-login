@@ -9,17 +9,16 @@
 
 </head>
 <body>
-
-<div class="container">
+<p id="logradouro">Meu Form</p>
+<div id="cont"class="container">
 	<fieldset style="width: 320px">
 		<form id="myForm">		
 			<label for="f-name">Nome</label>
 			<input class="input"id="f-name"type="text" name="name" oninput="nameValidate()"><br>
-			<span class="spans">Corriga o seu nome</span>
+			<span class="spans">Corrija o seu nome</span>
 			<label for="f-email">E-mail</label>
 			<input class="input" id="f-email"type="e-mail" name="e-mail"><br>
-			<span class="spans">Verifique o seu-email</span>
-			
+			<span class="spans">Verifique o seu-email</span>			
 			<label for="f-endereco">Endereço</label>
 			<input class="input" id="f-endereco" type="text" name="endereco">
 			<label for="f-numero">Nº</label>
@@ -32,16 +31,14 @@
 			<input class="input" id="f-uf"type="text" name="estado" style="width: 30px"><br>
 			<label for="f-cep">CEP</label>
 			<input class="input" id="f-cep" type="number" name="CEP" >
-			<button class="input" onclick="consultaEndereco()">Buscar CEP</button><br>
-		
+			<button  onclick="consultaEndereco()">Buscar CEP</button><br>		
 			<label for="f-password">Senha</label>
 			<input class="input" id="f-password"type="password" name="password">
-			<span class="spans">Corriga a sua senha</span>
-
+			<button id="cadastro" type="button" onclick="exibir()">Cadastrar</button>
 		</form>
 	</fieldset>	
-</div>
 	
+</div>
 
 <script type="text/javascript" src="script.js"></script>
 </body>

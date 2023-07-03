@@ -24,43 +24,63 @@ function nameValidate(){
 
 
 
-function consultaEndereco(){
-	let cep = document.querySelector('#f-cep').value;
-	if(cep.length !== 8){
-		alert('CEP Inválido');
-		return;
-	}
-	
-	
-		let url = `https://viacep.com.br/ws/${cep}/json/`;
-		// O addEventListener serve para adicionar ouvinte de evento ao evento do envio do formulário
-		// event.preventDefault() impede o padrão de envio do formulário, podendo manipular os dados
-		//retornados pela api
-		document.getElementById('myForm').addEventListener('submit', function(event) {
-    	event.preventDefault();
 
-		fetch(url).then(function(response){
-			response.json().then(function(data){
-				console.log(data);
-				/*mostrarEndereco(data);*/
-				const rua = data.logradouro;
-				const bairro = data.bairro;
-				const cidade = data.localidade;
-				const uf = data.uf;
-				document.getElementById('f-endereco').value = rua;
-				document.getElementById('f-bairro').value = bairro;
-				document.getElementById('f-cidade').value = cidade;
-				document.getElementById('f-uf').value = uf;
+function consultaEndereco(event) {
+  event.preventDefault();
 
-			})
-		});
-		});
-	}
+  let cep = document.querySelector('#f-cep').value;
+  if (cep.length !== 8) {
+    alert('CEP Inválido');
+    return;
+  }
 
+  let url = `https://viacep.com.br/ws/${cep}/json/`;
 
+  fetch(url)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      console.log(data);
+      const rua = data.logradouro;
+      const bairro = data.bairro;
+      const cidade = data.localidade;
+      const uf = data.uf;
+      document.getElementById('f-endereco').value = rua;
+      document.getElementById('f-bairro').value = bairro;
+      document.getElementById('f-cidade').value = cidade;
+      document.getElementById('f-uf').value = uf;
+    });
+}
 
+document.getElementById('myForm').addEventListener('submit', consultaEndereco);
 
+const botaoOcultar = document.getElementById('cadastro');
+const formulario = document.getElementById('cont');
 
+botaoOcultar.addEventListener('click', function() {
+  formulario.style.display = 'none';
+
+  // Obter o logradouro novamente e exibi-lo
+  let cep = document.querySelector('#f-cep').value;
+  let url = `https://viacep.com.br/ws/${cep}/json/`;
+
+  fetch(url)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      const rua = data.logradouro;
+      const bairro = data.bairro;
+      const cidade = data.localidade;
+      const uf = data.uf;
+
+      // Atribuir valor ao elemento HTML
+      const nome = document.getElementById('f-name').value;
+      document.getElementById('logradouro').textContent = " Nome: " + nome + `Rua: ${data.logradouro}`;
+
+    });
+});
 
 
 

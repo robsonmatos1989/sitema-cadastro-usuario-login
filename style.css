@@ -14,11 +14,6 @@ span{
 	border-radius: 10px;
 }
 
-/*.container{
-	display: flex;
-	justify-content: center;
-	margin-top: 25%;	
-}*/
 .container {
   position: relative;
   height: 100vh;
@@ -42,4 +37,10 @@ body{
 button{
 	font-family:"Trirong", serif;
 	font-weight: bold;
+	border-radius: 10px;
 }
+
+
+.hidden {
+            display: none;
+        }
