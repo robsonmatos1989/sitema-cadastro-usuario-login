@@ -9,10 +9,18 @@
 
 </head>
 <body>
+
+<div id="previewContainer">
+        <h2>Pré-visualização:</h2>
+        <img id="previewImage" src="#" alt="Pré-visualização da imagem" style="max-width: 200px;max-height: 200px;">
+    </div>
 <p id="logradouro">Meu Form</p>
+
 <div id="cont"class="container">
 	<fieldset style="width: 320px">
-		<form id="myForm">		
+		<form id="myForm">
+			<input type="file" id="uploadInput"><br>
+        	<button type="submit">Carregue sua foto</button><br>		
 			<label for="f-name">Nome</label>
 			<input class="input"id="f-name"type="text" name="name" oninput="nameValidate()"><br>
 			<span class="spans">Corrija o seu nome</span>

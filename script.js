@@ -77,7 +77,7 @@ botaoOcultar.addEventListener('click', function() {
 
       // Atribuir valor ao elemento HTML
       const nome = document.getElementById('f-name').value;
-      document.getElementById('logradouro').textContent = " Nome: " + nome + `Rua: ${data.logradouro}`;
+      document.getElementById('logradouro').textContent = "Nome: " + nome + `Rua: ${data.logradouro}`;
 
     });
 });
@@ -87,5 +87,20 @@ botaoOcultar.addEventListener('click', function() {
 
 
 
+
+
+var uploadInput = document.getElementById("uploadInput");
+        var previewImage = document.getElementById("previewImage");
+
+        uploadInput.addEventListener("change", function() {
+            var file = uploadInput.files[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    previewImage.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
 
 
