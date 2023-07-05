@@ -77,8 +77,9 @@ botaoOcultar.addEventListener('click', function() {
 
       // Atribuir valor ao elemento HTML
       const nome = document.getElementById('f-name').value;
-      document.getElementById('informacao').innerHTML = "Nome: " + nome + 
-      										"<br/> Rua: " + data.logradouro;
+      document.getElementById('informacao').innerHTML = "Nome: " + nome + "<br/>Endereço: "+
+      										"<br/>" + rua + ";" + "<br/>" + "Bairro: "+ bairro + ";"  
+      										+ "<br/>" + cidade + "-" + uf + ".";
 
     });
 });
