@@ -43,4 +43,10 @@ button{
 
 .hidden {
             display: none;
-        }
+}
+
+#uploadInput{
+	font-family:"Trirong", serif;
+	font-weight: bold;
+	border-radius: 10px;
+}
